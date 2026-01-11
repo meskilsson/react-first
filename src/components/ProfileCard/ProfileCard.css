@@ -1,0 +1,37 @@
+.user-card {
+    width: 220px;
+    padding: 16px;
+    border-radius: 8px;
+    border: 2px solid #e5e7eb;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.user-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 8px 0;
+}
+
+.user-card h2 {
+    margin: 0;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.user-card h3 {
+    margin: 8px 0 4px;
+    font-size: 16px;
+}
+
+.user-card p {
+    margin: 0;
+    font-size: 14px;
+    color: #6a778b;
+}
+
+.user-card.selected {
+    border-color: gold;
+}
