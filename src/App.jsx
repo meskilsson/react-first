@@ -8,6 +8,7 @@ import products from './components/ProductList/productList.js'
 import Card from './components/Card/Card.jsx'
 import UserProfile from './components/user/UserProfile.jsx'
 import userProfiles from './components/user/userProfiles.js'
+import ContactForm from './components/contact/ContactForm.jsx'
 
 function App() {
 
@@ -23,6 +24,12 @@ function App() {
       setSelectedId(id);
     }
   }
+
+  function handleContactSubmit(event) {
+    event.preventDefault();
+    console.log("Form submitted");
+  }
+
 
 
 
@@ -77,6 +84,14 @@ function App() {
           />
         </Card>
       ))}
+
+      <Card title="Kontaktform">
+        <ContactForm
+          submitLabel="Skicka"
+          onSubmit={handleContactSubmit} />
+      </Card>
+
+
     </div >
   )
 
