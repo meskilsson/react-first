@@ -8,8 +8,14 @@ function App() {
 
   const [selectedId, setSelectedId] = useState(null);
 
+
   function handleSelect(id) {
-    setSelectedId(id);
+
+    if (id === selectedId) {
+      setSelectedId(null)
+    } else {
+      setSelectedId(id);
+    }
   }
 
 
