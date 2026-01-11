@@ -10,11 +10,22 @@ function ProfileCard({
     img = defaultImg,
     hasDescription = true,
     isSelected,
-    onSelect
+    onSelect,
+    isSelectable
 }) {
+
+    function handleClick() {
+        if (!isSelectable) {
+            return;
+        } else {
+            onSelect(id);
+        }
+    }
+
+
     return (
-        <div className={`user-card ${isSelected ? 'selected' : ''}`}
-            onClick={() => onSelect(id)}
+        <div className={`user-card ${isSelected ? 'selected' : ''} ${!isSelectable ? 'disabled' : ''}`}
+            onClick={handleClick}
         >
             <h3>{name}</h3>
             <img src={img} alt={name} />
@@ -24,18 +35,9 @@ function ProfileCard({
     );
 }
 
+
 export default ProfileCard;
 
 
 
 
-// function Button({ text = 'Klicka här', type = 'primary', disabled = false }) {
-// return (
-// <button
-// className={`btn btn-${type}`}
-// disabled={disabled}
-// >
-// {text}
-// </button>
-// );
-// }

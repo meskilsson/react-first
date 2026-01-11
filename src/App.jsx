@@ -9,6 +9,7 @@ function App() {
   const [selectedId, setSelectedId] = useState(null);
 
 
+
   function handleSelect(id) {
 
     if (id === selectedId) {
@@ -32,6 +33,7 @@ function App() {
           description={person.description}
           img={person.img}
           isSelected={person.id === selectedId}
+          isSelectable={person.isSelectable}
           onSelect={handleSelect}
         />
       ))}
