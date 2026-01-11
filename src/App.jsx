@@ -3,6 +3,8 @@ import './App.css'
 import { useState } from 'react'
 import ProfileCard from './components/ProfileCard/ProfileCard.jsx'
 import profiles from './components/ProfileCard/index.js'
+import ProductList from './components/ProductList/ProductList.jsx'
+import products from './components/ProductList/productList.js'
 
 function App() {
 
@@ -23,7 +25,7 @@ function App() {
 
 
   return (
-    <div>
+    <div className="main-container">
       {profiles.map((person) => (
         <ProfileCard
           key={person.id}
@@ -37,6 +39,8 @@ function App() {
           onSelect={handleSelect}
         />
       ))}
+
+      <ProductList products={products} />
     </div>
   )
 

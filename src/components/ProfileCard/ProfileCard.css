@@ -1,10 +1,18 @@
 .user-card {
     width: 220px;
     padding: 16px;
-    border-radius: 8px;
-    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    border: 2px solid #374151;
+    background-color: #1f2933;
     text-align: center;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    color: #f9fafb;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.user-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
 }
 
 .user-card img {
@@ -12,13 +20,14 @@
     height: 80px;
     border-radius: 50%;
     object-fit: cover;
-    margin: 8px 0;
+    margin: 10px 0;
+    background-color: #111827;
 }
 
 .user-card h2 {
     margin: 0;
     font-size: 14px;
-    color: #6b7280;
+    color: #9ca3af;
 }
 
 .user-card h3 {
@@ -27,15 +36,17 @@
 }
 
 .user-card p {
-    margin: 0;
+    margin: 4px 0;
     font-size: 14px;
-    color: #6a778b;
+    color: #d1d5db;
 }
 
+/* Selected profile */
 .user-card.selected {
-    border-color: gold;
+    border-color: #facc15;
 }
 
+/* Disabled profile */
 .user-card.disabled {
     opacity: 0.5;
     cursor: not-allowed;
