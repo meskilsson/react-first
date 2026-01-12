@@ -11,10 +11,13 @@ import userProfiles from './components/user/userProfiles.js'
 import ContactForm from './components/contact/ContactForm.jsx'
 import InfoCard from './components/Card/InfoCard.jsx'
 import WarningCard from './components/Card/WarningCard.jsx'
+import navLinks from './components/Nav/navLinks.js'
+import Navbar from './components/Nav/Navbar.jsx'
 
 function App() {
 
   const [selectedId, setSelectedId] = useState(null);
+  const [activeUrl, setActiveUrl] = useState("/");
 
 
 
@@ -37,25 +40,37 @@ function App() {
 
 
   return (
-    <div className="main-container">
-      {profiles.map((person) => (
-        <ProfileCard
-          key={person.id}
-          id={person.id}
-          name={person.name}
-          title={person.title}
-          description={person.description}
-          img={person.img}
-          isSelected={person.id === selectedId}
-          isSelectable={person.isSelectable}
+    <>
+      <div className="navbar-container">
+        <Navbar
+          links={navLinks}
+          activeUrl={activeUrl}
+          onNavigate={(url) => setActiveUrl(url)}
+        />
+      </div>
+      <div className="main-container">
+        {profiles.map((person) => (
+          <ProfileCard
+            key={person.id}
+            id={person.id}
+            name={person.name}
+            title={person.title}
+            description={person.description}
+            img={person.img}
+            isSelected={person.id === selectedId}
+            isSelectable={person.isSelectable}
+            onSelect={handleSelect}
+          />
+        ))}
+
+        <ProductList
+          products={products}
+          selectedId={selectedId}
           onSelect={handleSelect}
         />
-      ))}
-
-      <ProductList products={products} />
 
 
-      {/* <Card title="Användarprofil">
+        {/* <Card title="Användarprofil">
         <UserProfile
           id={1}
           firstName="Mattias"
@@ -65,7 +80,7 @@ function App() {
         />
       </Card> */}
 
-      {/* <Card title="Användarprofil">
+        {/* <Card title="Användarprofil">
         <UserProfile
           id={userProfiles[0].id}
           firstName={userProfiles[0].firstName}
@@ -75,28 +90,30 @@ function App() {
         />
       </Card> */}
 
-      {userProfiles.map((user) => (
-        <WarningCard key={user.id} title="Användarprofil">
-          <UserProfile
-            id={user.id}
-            firstName={user.firstName}
-            lastName={user.lastName}
-            avatar={user.avatar}
-            email={user.email}
-          />
-        </WarningCard>
-      ))}
+        {userProfiles.map((user) => (
+          <WarningCard key={user.id} title="Användarprofil">
+            <UserProfile
+              id={user.id}
+              firstName={user.firstName}
+              lastName={user.lastName}
+              avatar={user.avatar}
+              email={user.email}
 
-      <InfoCard title="Kontaktform">
-        <ContactForm
-          submitLabel="Skicka"
-          onSubmit={handleContactSubmit} />
-      </InfoCard>
+            />
+          </WarningCard>
+        ))}
+
+        <InfoCard title="Kontaktform">
+          <ContactForm
+            submitLabel="Skicka"
+            onSubmit={handleContactSubmit} />
+        </InfoCard>
 
 
 
 
-    </div >
+      </div >
+    </>
   )
 
 }
