@@ -1,10 +1,10 @@
-
+import './ContactForm.css'
 
 function ContactForm({ onSubmit, submitLabel }) {
 
 
     return (
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} className="contact-form">
             <div>
                 <label>Namn</label>
                 <input type="text" name="name" />

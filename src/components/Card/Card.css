@@ -1,10 +1,11 @@
+/* Card.css (basen, neutral) */
 .card {
     max-width: 420px;
     border-radius: 16px;
-    background: rgb(67, 67, 122);
+    background: #ffffff;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     overflow: hidden;
-    border: 1px solid gold;
+    border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .card-header {
@@ -17,7 +18,7 @@
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 0.2px;
-    color: black;
+    color: #111;
 }
 
 .card-body {
@@ -25,5 +26,31 @@
 }
 
 .card p {
-    color: black;
+    color: #111;
+}
+
+/* WarningCard.css */
+.card--warning {
+    border: 1px solid #f59e0b;
+}
+
+.card--warning .card-header {
+    background: rgba(245, 158, 11, 0.12);
+}
+
+.card--warning .card-header h2 {
+    color: #92400e;
+}
+
+/* InfoCard.css */
+.card--info {
+    border: 1px solid #3b82f6;
+}
+
+.card--info .card-header {
+    background: rgba(59, 130, 246, 0.12);
+}
+
+.card--info .card-header h2 {
+    color: #1d4ed8;
 }

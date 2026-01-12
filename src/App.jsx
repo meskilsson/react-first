@@ -9,6 +9,8 @@ import Card from './components/Card/Card.jsx'
 import UserProfile from './components/user/UserProfile.jsx'
 import userProfiles from './components/user/userProfiles.js'
 import ContactForm from './components/contact/ContactForm.jsx'
+import InfoCard from './components/Card/InfoCard.jsx'
+import WarningCard from './components/Card/WarningCard.jsx'
 
 function App() {
 
@@ -74,7 +76,7 @@ function App() {
       </Card> */}
 
       {userProfiles.map((user) => (
-        <Card key={user.id} title="Användarprofil">
+        <WarningCard key={user.id} title="Användarprofil">
           <UserProfile
             id={user.id}
             firstName={user.firstName}
@@ -82,14 +84,16 @@ function App() {
             avatar={user.avatar}
             email={user.email}
           />
-        </Card>
+        </WarningCard>
       ))}
 
-      <Card title="Kontaktform">
+      <InfoCard title="Kontaktform">
         <ContactForm
           submitLabel="Skicka"
           onSubmit={handleContactSubmit} />
-      </Card>
+      </InfoCard>
+
+
 
 
     </div >
